@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body>
+        <h1>Edit Comics Page</h1>
+        <form action="/items/<%=item.id%>?_method=PUT" method="POST">>
+		<!--  NOTE: the form is pre-populated with values for the server-->
+        Title: <input type="text" name="title" value="<%=item.title%>"/><br/>
+        Issue: <input type="text" name="issue" value="<%=item.issue%>"/><br/>   
+        Publication Date: <input type="text" name="publicationCoverDate" value="<%=item.publicationCoverDate%>"/><br/>
+        Volume: <input type="text" name="volume" value="<%=item.volume%>"/><br/>
+        Volume Year: <input type="text" name="volumeYear" value="<%=item.volumeYear%>"/><br/>
+        Variant: <input type="text" name="variantCover" value="<%=item.variantCover%>"/><br/>
+        Type: <input type="text" name="typeItem" value="<%=item.typeItem%>"/><br/>
+        Cover Price: <input type="text" name="priceCover" value="<%=item.priceCover%>"/><br/>
+        Price Paid: <input type="text" name="pricePaid" value="<%=item.pricePaid%>"/><br/>
+        Date Paid: <input type="text" name="datePaid" value="<%=item.datePaid%>"/><br/>
+        Condition: <input type="text" name="condition" value="<%=item.condition%>"/><br/>
+        Valuation: <input type="text" name="valuation" value="<%=item.valuation%>"/><br/>
+        Valuation Date: <input type="text" name="valuationDate" value="<%=item.valuationDate%>"/><br/>
+        Valuation Source: <input type="text" name="valuationSource" value="<%=item.valuationSource%>"/><br/>
+        Publisher: <input type="text" name="publisher" value="<%=item.publisher%>"/><br/>
+        Keywords: <input type="text" name="keyWords" value="<%=item.keyWords%>"/><br/>
+        Box Number: <input type="text" name="boxNumber" value="<%=item.boxNumber%>"/><br/>
+        Box Divider: <input type="text" name="boxDivider" value="<%=item.boxDivider%>"/><br/>
+        Box Location: <input type="text" name="boxLocation" value="<%=item.boxLocation%>"/><br/>
+        Artist #1: <input type="text" name="artist1" value="<%=item.artist1%>"/><br/>
+        Artist #2: <input type="text" name="artist2" value="<%=item.artist2%>"/><br/>
+        Writer #1: <input type="text" name="writer1" value="<%=item.writer1%>"/><br/>
+        Writer #2: <input type="text" name="writer2" value="<%=item.writer2%>"/><br/>
+        Title: <input type="text" name="title" value="<%=item.title%>"/><br/>
+        Title: <input type="text" name="title" value="<%=item.title%>"/><br/>
+        Title: <input type="text" name="title" value="<%=item.title%>"/><br/>
+
+		Color: <input type="text" name="color" value="<%=item.color%>"/><br/>
+
+		<!-- <select name="season">
+			<% for ( let i = 0; i < seasons.length; i++ ) { let selected = ( i == 0
+			) ? "selected" : ""; %>
+			<option value="<%=seasons[i].id%>" selected
+			  ><%=seasons[i].name%>
+			</option>
+			<% } %>
+		  </select> -->
+
+		<br/>
+		<input type="submit" name="" value="Submit Changes"/>
+        </form>
+    </body>
+</html>

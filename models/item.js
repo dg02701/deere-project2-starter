@@ -42,6 +42,9 @@ module.exports = (sequelize, DataTypes) => {
     deleteFlag: DataTypes.BOOLEAN,
     deleteReason: DataTypes.STRING,
     userId: DataTypes.INTEGER,
+    lettering: DataTypes.STRING,
+    coloring: DataTypes.STRING,
+    editor: DataTypes.STRING,
 
   }, {
     sequelize,
