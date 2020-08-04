@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>**Comics*SHOW</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>Comics show page</h1>
+    <!--  ADD DELETE FORM HERE-->
+    <form action="/items/<%=item.id%>?_method=DELETE" method="POST">
+        <input id="deleteIndex" type="submit" value="DELETE Comic"/>
+    </form>
+    <%= item.name %>  
+</body>
+</html>
