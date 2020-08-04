@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Item.belongsTo(models.User, { foreignKey: "userId" });
     }
   };
   Item.init({
@@ -40,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     inker: DataTypes.STRING,
     deleteFlag: DataTypes.BOOLEAN,
     deleteReason: DataTypes.STRING,
+    userId: DataTypes.INTEGER,
 
   }, {
     sequelize,
