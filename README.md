@@ -45,8 +45,11 @@ You have the following routes available.
 
 ############# Darryl adds
 WDXDG02701VCG:deere-project2-starter dg02701$ npx sequelize model:generate --name Item --attributes title:INTEGER,issue:INTEGER,publicationCoverDate:DATEONLY,volume:INTEGER,volumneYear:INTEGER,variantCover:INTEGER,typeItem:STRING,priceCover:DECIMAL,pricePaid:DECIMAL,datePaid:DATEONLY,condition:STRING,valuation:DECIMAL,valuationDate:DATEONLY,valuationSource:STRING,publisher:STRING,keyWords:STRING,boxNumber:STRING,boxDivider:STRING,boxLocation:STRING,artist1:STRING,artist2:STRING,writer1:STRING,writer2:STRING,inker:STRING
+
 WDXDG02701VCG:deere-project2-starter dg02701$ git commit -m "corrected error with '--attributes' Issue 14 & added delete elements to Item model and migration files"
+
 npx sequelize db:migrate
+
 Loaded configuration file "config/config.json".
 Using environment "development".
 == 20200803205034-create-item: migrating =======
@@ -68,11 +71,14 @@ Loaded configuration file "config/config.json".
 Using environment "development".
 == 20200804113018-add-userId-to-items: migrating =======
 == 20200804113018-add-userId-to-items: migrated (0.022s)
+
 **** one User can have many Items (comics in this case); therefore, 
    User has a many-to-one relationship with Items
+   
 **** one individual item (physical comic) can have only one User (owner/collector); therefore,
    Items has a one-to-many relationship with User
    Foreign key column userId added to Items table to associate the two tables
-Add associations to:
-   models/user.js >> User.hasMany(models.Item, { foreignKey: "userId" });
-   models/item.js >> Item.belongsTo(models.User, { foreignKey: "userId" });
+   
+Added associations to: <br>
+   models/user.js >> User.hasMany(models.Item, { foreignKey: "userId" }); <br>
+   models/item.js >> Item.belongsTo(models.User, { foreignKey: "userId" }); <br>
