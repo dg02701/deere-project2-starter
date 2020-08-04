@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, BOOLEAN, STRING
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Item extends Model {
@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     issue: DataTypes.INTEGER,
     publicationCoverDate: DataTypes.DATEONLY,
     volume: DataTypes.INTEGER,
-    volumneYear: DataTypes.INTEGER,
+    volumeYear: DataTypes.INTEGER,
     variantCover: DataTypes.INTEGER,
-    typeItem: DataTypes.STRING,  //monthly, TRADE, reprint, oneshot, variant, main, etc.
+    typeItem: DataTypes.STRING,
     priceCover: DataTypes.DECIMAL,
     pricePaid: DataTypes.DECIMAL,
     datePaid: DataTypes.DATEONLY,
@@ -30,15 +30,16 @@ module.exports = (sequelize, DataTypes) => {
     valuationSource: DataTypes.STRING,
     publisher: DataTypes.STRING,
     keyWords: DataTypes.STRING,
-    boxNumber: DataTypes.STRING, //string due to some using Roman numberals
-    boxDivider: DataTypes.STRING, //subdivision of box and might be labled # or name
+    boxNumber: DataTypes.STRING,
+    boxDivider: DataTypes.STRING,
     boxLocation: DataTypes.STRING,
-    artist1: DataTypes.STRING, //required
+    artist1: DataTypes.STRING,
     artist2: DataTypes.STRING,
-    writer1: DataTypes.STRING, //required
+    writer1: DataTypes.STRING,
     writer2: DataTypes.STRING,
-    inker: DataTypes.STRING, //required
-
+    inker: DataTypes.STRING,
+    deleteFlag: DataTypes.BOOLEAN,
+    deleteReason: DataTypes.STRING,
 
   }, {
     sequelize,
