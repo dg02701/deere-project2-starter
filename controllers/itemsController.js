@@ -13,14 +13,14 @@ const UserModel = require("../models").User;
 //Sequelized - INDEX route
 router.get("/", (req, res) => {
   ItemModel.findAll().then((itemsAllFromDb) => {
-    res.render("index.ejs", {item: itemsAllFromDb});
+    res.render("/items/index.ejs", {item: itemsAllFromDb});
   })
 });
 
-//Sequelized - CREATE via POST ROUTE --> controllers
+//Sequelized - CREATE NEW via POST ROUTE --> controllers
 router.post("/", (req, res)=>{
-  ItemModel.create(req.body).then(() => {
-    res.redirect("/item");
+  ItemModel.create(req.body).then((newUser) => {
+    res.redirect("/items");
   });
 });
 
@@ -28,7 +28,7 @@ router.post("/", (req, res)=>{
 //Sequelized -  UPDATE -- > //EDIT route
 router.get('/:id/edit', function(req, res){
 	ItemModel.findByPk(req.params.id).then((itemToEdit) => {
-    res.render('edit.ejs', {
+    res.render('/items/edit.ejs', {
       item: itemToEdit,
     });
   });
@@ -37,7 +37,7 @@ router.get('/:id/edit', function(req, res){
 router.put('/:id', (req, res) => {
   ItemModel.update(req.body, 
     {where: {id: req.params.id}, returning: true,}).then((itemUpdated) => {
-    res.redirect("/item"); //redirect to the index page
+    res.redirect("/items"); //redirect to the index page
   });
 });
 
@@ -45,7 +45,7 @@ router.put('/:id', (req, res) => {
 //put this above your show.ejs file
 //Sequelized - no changes needed
 router.get('/new', (req, res) => {
-    res.render('new.ejs');
+    res.render('/items/new.ejs');
   });
   
 //Sequelized -  SHOW ROUTE with join
@@ -55,7 +55,7 @@ router.get('/:id', (req, res) => {
     })
     .then((item) => {
         console.log(item);
-        res.render("show.ejs", {
+        res.render("/items/show.ejs", {
             item: item
         });
     })
@@ -70,7 +70,7 @@ router.get('/:id', (req, res) => {
 //Sequelized -  DELETE  (note Sequelized method is '.destroy')
 router.delete('/:id', (req, res) => {
   ItemModel.destroy({ where: { id: req.params.id } }).then(() => {
-    res.redirect("/item");
+    res.redirect("/items");
   });
 });
 
