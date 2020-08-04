@@ -45,7 +45,6 @@ module.exports = (sequelize, DataTypes) => {
     lettering: DataTypes.STRING,
     coloring: DataTypes.STRING,
     editor: DataTypes.STRING,
-
   }, {
     sequelize,
     modelName: 'Item',
