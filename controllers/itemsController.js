@@ -3,8 +3,6 @@ const express = require("express");
 const item = require("../models/item");
 const router = express.Router();
 
-// Add pokemon model
-// const pokemon = require("../pokemon.js");
 //Sequelized
 const ItemModel = require("../models").Item;
 const UserModel = require("../models").User;
@@ -60,12 +58,7 @@ router.get('/:id', (req, res) => {
         });
     })
 });
-  
-//DELETE 
-// router.delete('/:id', (req, res) => {
-//       pokemon.splice(req.params.index, 1); //remove the item from the array
-//       res.redirect('/pokemon');  //redirect back to index route
-// });
+
 
 //Sequelized -  DELETE  (note Sequelized method is '.destroy')
 router.delete('/:id', (req, res) => {
