@@ -11,11 +11,11 @@
         <!--  NOTE: action will be the route, method will be the HTTP verb-->
         <form action="/items" method="POST">
             <!--  NOTE: the form is pre-populated with values for the server-->
-            User ID: <input type="text" name="userId" />  
-            Title: <input type="text" name="title" /><br/>
-            Issue: <input type="text" name="issue" /><br/>   
-            Publication Date: <input type="text" name="publicationCoverDate" /><br/>
-            Volume: <input type="text" name="volume" /><br/>
+            User ID: <input class="required" type="text" name="userId" />  
+            Title:* <input class="required" type="text" name="title" /><br/>
+            Issue: <input class="required" type="text" name="issue" /><br/>   
+            Publication Date: <input class="required" type="text" name="publicationCoverDate" /><br/>
+            Volume: <input class="required" type="text" name="volume" /><br/>
             Volume Year: <input type="text" name="volumeYear" /><br/>
             Variant: <input type="text" name="variantCover" /><br/>
             Type: <input type="text" name="typeItem" /><br/>

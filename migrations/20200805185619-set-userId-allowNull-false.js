@@ -2,13 +2,13 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn('Items',
-     'lettering',
-     { 
-       type: Sequelize.STRING 
-     }
-     );
- },
+     await queryInterface.changeColumn('Items',
+      'userId',
+      { 
+        type: Sequelize.INTEGER ,
+        allowNull: false,
+      });
+  },
 
   down: async (queryInterface, Sequelize) => {
     /**
