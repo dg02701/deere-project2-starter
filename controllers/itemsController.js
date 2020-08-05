@@ -11,7 +11,7 @@ const UserModel = require("../models").User;
 //Sequelized - INDEX route
 router.get("/", (req, res) => {
   ItemModel.findAll().then((itemsAllFromDb) => {
-    res.render("/items/index.ejs", {item: itemsAllFromDb});
+    res.render("items/index.ejs", {item: itemsAllFromDb});
   })
 });
 
@@ -26,7 +26,7 @@ router.post("/", (req, res)=>{
 //Sequelized -  UPDATE -- > //EDIT route
 router.get('/:id/edit', function(req, res){
 	ItemModel.findByPk(req.params.id).then((itemToEdit) => {
-    res.render('/items/edit.ejs', {
+    res.render('items/edit.ejs', {
       item: itemToEdit,
     });
   });
@@ -43,7 +43,7 @@ router.put('/:id', (req, res) => {
 //put this above your show.ejs file
 //Sequelized - no changes needed
 router.get('/new', (req, res) => {
-    res.render('/items/new.ejs');
+    res.render('items/new.ejs');
   });
   
 //Sequelized -  SHOW ROUTE with join
@@ -53,7 +53,7 @@ router.get('/:id', (req, res) => {
     })
     .then((item) => {
         console.log(item);
-        res.render("/items/show.ejs", {
+        res.render("items/show.ejs", {
             item: item
         });
     })
