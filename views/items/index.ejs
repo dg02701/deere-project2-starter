@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>***Item*INDEX*Project 2 Comic Index Page</title>
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/public/app.css">
     </head>
     <body>
         <h1>Comics Index Page</h1>
@@ -12,10 +12,10 @@
             <a href="/items/new">Enter a New Comic</a>
         </nav>
         <ul>
-            <% items.forEach((item, i) => { %>
+            <% item.forEach((item, i) => { %>
             <li>
                 <a href="/items/<%= item[i].id %>">
-                    <%= items[i].name %>
+                    <%= item[i].name %>
                 </a>
                 			<!--  ADD DELETE FORM HERE-->
 			<form action="/items/<%= item[i].id %>?_method=DELETE" method="POST">
