@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <h1>Comics Index Page</h1>
+        <h1>Comics Collections</h1>
         
         <nav>
             <a href="/items/new">Enter a New Comic</a>
@@ -18,11 +18,11 @@
                 <a href="/items/<%= item.id %>">
                     <%= item.title %> <%= item.issue %> <%= item.publicationCoverDate %> 
                 </a>
-                			<!--  ADD DELETE FORM HERE-->
+                			<!--  DELETE, removes row from db!!!-->
 			<form action="/items/<%= item.id %>?_method=DELETE" method="POST">
 				<input type="submit" value="Delete comic"/>
             </form>
-                        <!-- Add edit link here  -->
+                        <!-- Edit link here  -->
             <a href="/items/<%= item.id %>/edit">Edit</a>
             </li>
             <% }) %>

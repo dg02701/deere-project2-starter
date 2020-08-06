@@ -50,7 +50,7 @@ router.post("/signup", (req, res) => {
   });
 });
 
-// GET LOGIN
+// GET empty LOGIN form
 router.get("/login", (req, res) => {
   res.render("users/login.ejs");
 });

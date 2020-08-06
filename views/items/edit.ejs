@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <h1>Edit Comics Page</h1>
+        <h1>Comics Collections</h1>
+        <h2>Edit your comic</h2>
         <form action="/items/<%=item.id%>?_method=PUT" method="POST">>
 		<!--  NOTE: the form is pre-populated with values for the server-->
         Title: <input type="text" name="title" value="<%=item.title%>"/><br/>
@@ -36,6 +37,9 @@
         Lettering: <input type="text" name="lettering" value="<%=item.lettering%>"/><br/>
         Coloring: <input type="text" name="coloring" value="<%=item.coloring%>"/><br/>
         Editor: <input type="text" name="editor" value="<%=item.editor%>"/><br/>
+        Delete Flag: <input type="text" name="deleteFlag" value="<%=item.deleteFlag%>"/><br/>
+        Delete Reason: <input type="text" name="deleteReason" value="<%=item.deleteReason%>"/><br/>
+
 		<br/>
 		<input type="submit" name="" value="Submit Changes"/>
         </form>

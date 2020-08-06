@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>***USER*PROFILE*Project 2 User Profile Page</title>
+    <title>***USER*PROFILE*Project 2</title>
   </head>
 
   <body>
-    <h1>Welcome to <%= user.name %>'s Profile Page</h1>
-
+    <h1>Comics Collections</h1>
+    <h2>Welcome <%= user.name %></h2>
+    <br/>
+    <h3>Your profile:</h3>
+    <!-- Update "edit" button -->
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
       Name: <input type="text" name="name" value="<%=user.name%>" /><br />
       <br />
@@ -17,13 +20,14 @@
       <br />
       <br />
       Password:
-        <!-- type of password adds the ********** to password field -->
+        <!-- type password adds the ********** to password field -->
         <input type="password" name="password" value="<%=user.password%>" /><br />
       <br />
       <input type="submit" value="Edit Profile" />
     </form>
     <br />
-    <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+    <!-- Delete button, removes user completely from db, leaves 'hole'-->
+    <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
       <input type="submit" value="Delete User" />
     </form>
 
