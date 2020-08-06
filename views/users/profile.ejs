@@ -25,13 +25,14 @@
       <br />
       <input type="submit" value="Edit Profile" />
     </form>
-    <br />
     <!-- Delete button, removes user completely from db, leaves 'hole'-->
     <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
       <input type="submit" value="Delete User" />
     </form>
-
-    <br /><br />
+    <!-- jump to items Index-->
+    <br/>
+    <a href="/items">See your collection</a>
+    <br/>
     <a href="/">Back to Homepage</a>
   </body>
 </html>

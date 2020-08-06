@@ -7,14 +7,16 @@
     </head>
     <body>
         <h1>Comics Collections</h1>
-        
+    
         <nav>
             <a href="/items/new">Enter a New Comic</a>
         </nav>
         <ul>
-            <% item.forEach((item) => { %>
-                <% console.log("test from index.ejs ln 16") %>
+            <% item.forEach((item, user) => { %>
+                <% console.log(`test from index.ejs ln 16 user.id = ${user.id}`) %>
             <li>
+                <% if (item.userId === user.id) {%> 
+                    <% console.log(`inside item index IF @ ln 18 ${item.userId}`) %>                
                 <a href="/items/<%= item.id %>">
                     <%= item.title %> <%= item.issue %> <%= item.publicationCoverDate %> 
                 </a>
@@ -25,6 +27,7 @@
                         <!-- Edit link here  -->
             <a href="/items/<%= item.id %>/edit">Edit</a>
             </li>
+            <% } %>
             <% }) %>
           </ul>
     </body>
