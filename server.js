@@ -29,6 +29,7 @@ app.use(express.static("public"));
 
 // HOMEPAGE
 app.get("/", (req, res) => {
+  console.log("server.js ln 32 for HOMEPAGE");
   res.render("users/index.ejs");
 });
 

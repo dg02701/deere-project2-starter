@@ -82,3 +82,17 @@ Using environment "development".
 Added associations to: <br>
    models/user.js >> User.hasMany(models.Item, { foreignKey: "userId" }); <br>
    models/item.js >> Item.belongsTo(models.User, { foreignKey: "userId" }); <br>
+
+Why not the 'id'?
+   TypeError: /Users/dg02701/sei/projects/deere-project2-starter/views/items/index.ejs:22
+    20|                 </a>
+    21|                 			<!--  ADD DELETE FORM HERE-->
+ >> 22| 			<form action="/items/<%= item[i].id %>?_method=DELETE" method="POST">
+    23| 				<input type="submit" value="Delete file"/>
+    24|             </form>
+    25|                         <!-- Add edit link here  -->
+
+Cannot read property 'id' of undefined
+    at eval (/Users/dg02701/sei/projects/deere-project2-starter/views/items/index.ejs:22:34)
+    at Array.forEach (<anonymous>)
+    at eval (/Users/dg02701/sei/projects/deere-project2-starter/views/items/index.ejs:10:13)

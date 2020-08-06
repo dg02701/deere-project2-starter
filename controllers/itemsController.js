@@ -11,13 +11,15 @@ const UserModel = require("../models").User;
 //Sequelized - INDEX route
 router.get("/", (req, res) => {
   ItemModel.findAll().then((itemsAllFromDb) => {
+    console.log("itemsController.js ln14", itemsAllFromDb);
     res.render("items/index.ejs", {item: itemsAllFromDb});
   })
 });
 
 //Sequelized - CREATE NEW via POST ROUTE --> controllers
 router.post("/", (req, res)=>{
-  ItemModel.create(req.body).then((newUser) => {
+  ItemModel.create(req.body).then((newItem) => {
+    console.log("POST new route ln22", newItem)
     res.redirect("/items");
   });
 });

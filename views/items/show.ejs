@@ -6,11 +6,18 @@
     <title>**Comics*SHOW</title>
     <link rel="stylesheet" href="/css/app.css">
 </head>
-<body>Comics show page</h1>
+<body>
+    <!-- <h1>Comics show page</h1> -->
+    <h2><%= item.title %> <%= item.issue %> <%= item.publicationCoverDate %></h2>
+    <br/>
+    <br/>
+    <br/>
+    <!-- Add edit link here  -->
+    <a href="/items/<%= item.id %>/edit">Edit</a>
     <!--  ADD DELETE FORM HERE-->
     <form action="/items/<%=item.id%>?_method=DELETE" method="POST">
         <input id="deleteIndex" type="submit" value="DELETE Comic"/>
     </form>
-    <%= item.title %>  
+ 
 </body>
 </html>
