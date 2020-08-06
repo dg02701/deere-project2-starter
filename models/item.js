@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Item.init({
-    title: DataTypes.INTEGER,
+    title: DataTypes.STRING,
     issue: DataTypes.INTEGER,
     publicationCoverDate: DataTypes.DATEONLY,
-    volume: DataTypes.INTEGER,
+    volume: DataTypes.STRING,
     volumeYear: DataTypes.INTEGER,
-    variantCover: DataTypes.INTEGER,
+    variantCover: DataTypes.STRING,
     typeItem: DataTypes.STRING,
     priceCover: DataTypes.DECIMAL,
     pricePaid: DataTypes.DECIMAL,
