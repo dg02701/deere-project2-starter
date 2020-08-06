@@ -96,3 +96,12 @@ Cannot read property 'id' of undefined
     at eval (/Users/dg02701/sei/projects/deere-project2-starter/views/items/index.ejs:22:34)
     at Array.forEach (<anonymous>)
     at eval (/Users/dg02701/sei/projects/deere-project2-starter/views/items/index.ejs:10:13)
+
+06-Aug-2020 HEROKU
+WDXDG02701VCG:deere-project2-starter dg02701$ heroku login
+
+heroku: Press any key to open up the browser to login or q to exit: 
+Opening browser to https://cli-auth.heroku.com/auth/cli/browser/e3335f92-bad8-467b-a45a-19d5f96f1f60
+Logging in... done
+Logged in as degman@mchsi.com
+WDXDG02701VCG:deere-project2-starter dg02701$ 
