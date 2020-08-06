@@ -13,6 +13,12 @@ router.get("/profile/:id", (req, res) => {
     console.log(userProfile);
   });
 });
+router.get("/profile/:id/items", (req, res) => {
+  ItemModel.findAll().then((itemsAllFromDb) => {
+    console.log("itemsController.js ln14", itemsAllFromDb);
+    res.render("items/index.ejs", {item: itemsAllFromDb, id: req.params.id});
+  })
+});
 
 // SEQUELIZE'd PUT route to update User's info
 router.put("/profile/:id", (req, res) => {

@@ -1,9 +1,9 @@
 body {
-    font:red;
+    color: blue;
     font-size: larger;
 }
 
 
 .required {
-    font: red;
+    color: red;
 }

@@ -13,9 +13,10 @@
         </nav>
         <ul>
             <% item.forEach((item, user) => { %>
-                <% console.log(`test from index.ejs ln 16 user.id = ${user.id}`) %>
             <li>
-                <% if (item.userId === user.id) {%> 
+                <% console.log(`item.userId = ${typeof item.userId}`) %>  
+                <% console.log(`id =  ${typeof id}`) %>                              
+                <% if (item.userId == id) {%> 
                     <% console.log(`inside item index IF @ ln 18 ${item.userId}`) %>                
                 <a href="/items/<%= item.id %>">
                     <%= item.title %> <%= item.issue %> <%= item.publicationCoverDate %> 
