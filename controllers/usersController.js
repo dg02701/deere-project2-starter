@@ -13,6 +13,8 @@ router.get("/profile/:id", (req, res) => {
     console.log(userProfile);
   });
 });
+//issue #48 - copied item INDEX route into 
+//usersController so user.id value could be obtained from user profile page.
 router.get("/profile/:id/items", (req, res) => {
   ItemModel.findAll().then((itemsAllFromDb) => {
     console.log("itemsController.js ln14", itemsAllFromDb);

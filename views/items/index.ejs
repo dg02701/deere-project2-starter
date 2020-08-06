@@ -15,7 +15,8 @@
             <% item.forEach((item, user) => { %>
             <li>
                 <% console.log(`item.userId = ${typeof item.userId}`) %>  
-                <% console.log(`id =  ${typeof id}`) %>                              
+                <% console.log(`id =  ${typeof id}`) %>   
+                <!-- '==' because item.userId is number &  id is string -->
                 <% if (item.userId == id) {%> 
                     <% console.log(`inside item index IF @ ln 18 ${item.userId}`) %>                
                 <a href="/items/<%= item.id %>">

@@ -7,27 +7,35 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <h1>Comics Collections</h1>
-        <h2>Enter a new comic</h2>
+        <header>
+            Comics Collections
+            <h6>Enter a new comic</h6>
+        </header>
         <!--  NOTE: action will be the route, method will be the HTTP verb-->
+
         <form action="/items" method="POST">
             <!--  NOTE: the form is pre-populated with values for the server-->
-            User ID:* <input class="required" type="number" name="userId" />  
-            Title:* <input class="required" type="text" name="title" /><br/>
-            Issue:* <input class="required" type="number" name="issue" /><br/>   
-            Publication Date:* <input class="required" type="date" name="publicationCoverDate" /><br/>
-            Volume:* <input class="required" type="text" name="volume" /><br/>
+            <div class="required">
+                REQUIRED FIELDS:<br/>
+                <span>
+                User ID:*<input type="number" name="userId" />
+                Title:*<input type="text" name="title" />
+                Issue:*<input type="number" name="issue" />
+                Publication Date:*<input type="date" name="publicationCoverDate" />
+                Volume:*<input type="text" name="volume" />
+                Cover Price:*<input type="number" name="priceCover" />
+                Publisher:*<input type="text" name="publisher" />
+                </span>
+            </div>
             Volume Year: <input type="number" name="volumeYear" /><br/>
             Variant Cover: <input type="text" name="variantCover" /><br/>
             Type: <input type="text" name="typeItem" /><br/>
-            Cover Price:* <input class="required" type="number" name="priceCover" /><br/>
             Price Paid: <input type="number" name="pricePaid" /><br/>
             Date Paid: <input type="date" name="datePaid" /><br/>
             Condition: <input type="text" name="condition" /><br/>
             Valuation: <input type="number" name="valuation" /><br/>
             Valuation Date: <input type="date" name="valuationDate" ><br/>
             Valuation Source: <input type="text" name="valuationSource" /><br/>
-            Publisher:* <input class="required" type="text" name="publisher" /><br/>
             Keywords: <input type="text" name="keyWords" /><br/>
             Box Number: <input type="text" name="boxNumber" /><br/>
             Box Divider: <input type="text" name="boxDivider" /><br/>
