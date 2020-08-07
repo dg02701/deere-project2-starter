@@ -50,13 +50,11 @@ Project Links
 github repo:  https://github.com/dg02701/deere-project2-starter
 deployment: https://darryl-project2-starter-app.herokuapp.com/
 Wireframes:
- - ERD 
+ - ERD https://github.com/dg02701/deere-project2-starter/commit/dc3f50aa1ab1b0dd173761eec51b6aeaade8bb64
+ Github is not handling the pdf well.  Download the file to open as pdf
 
 
-
-
-MVP/PostMVP - 5min
-The functionality will then be divided into two separate lists: MPV and PostMVP. Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
+MVP/PostMVP
 
 MVP - User Stories 1 through 6
 PostMVP - User Stories 7 through 10
