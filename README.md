@@ -1,3 +1,96 @@
+Project Description
+Project is for an app to be used by comic book collectors to track their collection.  The app has to tables for MVP:  Users (the collectors) and Items (the comics).  Generic names are used as much as possible such as 'user' and 'item' so that most code can be easily reporposed for some other collection db app.  The reuired fields are those that a collector will always have if the physical item is in their position.  Also, some fields, such as the credits to the talent, are things that not all collectors track, etc.  Therefore, those are not required fields.
+
+User Stories
+1.	MVP - As a user, I want to know what comics I have in my collection.
+2.	MVP - As a user, I want to have this info on each comic (* = required):
+ 
+*Title
+*Issue
+*Pub date
+*Volume
+Volume year
+Variant cover #
+Type (original, TP,  reprint, hb, variant)
+*Cover price
+Paid price
+Condition
+Current valuation
+Date for valuation
+Souce of valuation
+*Publisher
+Key words
+Stored in box #
+Stored at divider in box
+Location of box
+Artist
+Writer
+Inker
+Lettering
+Coloring
+Editor
+deleteFlag 
+deleteReason
+*userId
+ 
+3.	MVP - As a user, I want to be able to find a comic in my collection
+4.	MVP - As a user, I want to be able to edit a comic.
+5.	MVP - As a user, I want to be able to delete an entry if error
+6.	MVP - As a user, I want to be able to show comics I used to own but have dispositioned in someway
+7.	As a user, I want to have very easy data entry.
+8.	As a user, I want to know current valuation of collection
+9.	As a user, I want to know which comics in a series I do NOT have (a ‘collect’ list)
+10.	As a user, I want to mass load my collection from a file w/o knowing js, etc.
+11.	STRETCH** As a user, I do not want other users to be able to see my collection unless I have sharded it with them.  OPT-IN! for sharing.
+12.	STRETCH** As a user, I want interface to be graphical.  For example, use Bat device to ID folders for my Batman comics, etc.
+13.	STRETCH** As a user, I want graphic reprint to show as the individual comics to avoid duplicates.  Therfore, ‘collect’ list takes into account these reprints and notes them as such.
+
+
+Project Links
+github repo:  https://github.com/dg02701/deere-project2-starter
+deployment: https://darryl-project2-starter-app.herokuapp.com/
+Wireframes:
+ - ERD 
+
+
+
+
+MVP/PostMVP - 5min
+The functionality will then be divided into two separate lists: MPV and PostMVP. Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
+
+MVP - User Stories 1 through 6
+PostMVP - User Stories 7 through 10
+STRETCH - 11 through 13
+
+
+
+Technologies used:
+HTML, CSS (needs much improvement), node.js, express, PostgreSQL and pgAdmin.  Full list below:
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "pg": "^8.3.0",
+    "sequelize": "^6.3.3",
+    "sequelize-cli": "^6.2.0"
+App was deployed using Heroku site.
+
+Code Snippet
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description. Code snippet should not be greater than 10 lines of code.
+
+
+Issues and Resolutions
+Major issues are with CSS and lack of effeciency with it.
+
+Also, linking the two tables so that the user id of collector logged in can be compared with the FK  (item.userId) so each user can see only their items.  The id value at some step was converted from integer to string.  Resolved by changing comparison from '===' to:
+<% if (item.userId == id) {%> 
+
+
+
+
 ## Deere Project 2 Starter Code
 
 ## Set Up
