@@ -8,7 +8,7 @@ const ItemModel = require("../models").Item;
 const UserModel = require("../models").User;
 
 
-//Sequelized - INDEX route
+//Sequelized - INDEX route >> issue #48 moved to usersController.js
 router.get("/", (req, res) => {
   ItemModel.findAll().then((itemsAllFromDb) => {
     console.log("itemsController.js ln14", itemsAllFromDb);
@@ -20,7 +20,8 @@ router.get("/", (req, res) => {
 router.post("/", (req, res)=>{
   ItemModel.create(req.body).then((newItem) => {
     console.log("POST new route ln22", newItem)
-    res.redirect("/items");
+    // res.redirect("/items");
+    res.redirect("/users/profile/2/items");
   });
 });
 

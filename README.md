@@ -5,20 +5,21 @@ User Stories
 1.	MVP - As a user, I want to know what comics I have in my collection.
 2.	MVP - As a user, I want to have this info on each comic (* = required):
  
+*userId
 *Title
 *Issue
 *Pub date
 *Volume
+*Cover price
+*Publisher
 Volume year
 Variant cover #
 Type (original, TP,  reprint, hb, variant)
-*Cover price
 Paid price
 Condition
 Current valuation
 Date for valuation
 Souce of valuation
-*Publisher
 Key words
 Stored in box #
 Stored at divider in box
@@ -31,7 +32,6 @@ Coloring
 Editor
 deleteFlag 
 deleteReason
-*userId
  
 3.	MVP - As a user, I want to be able to find a comic in my collection
 4.	MVP - As a user, I want to be able to edit a comic.
@@ -83,8 +83,35 @@ Use this section to include a brief code snippet of functionality that you are p
 Issues and Resolutions
 Major issues are with CSS and lack of effeciency with it.
 
-Also, linking the two tables so that the user id of collector logged in can be compared with the FK  (item.userId) so each user can see only their items.  The id value at some step was converted from integer to string.  Resolved by changing comparison from '===' to:
+Issue #48  Linking the two tables so that the user id of collector logged in can be compared with the FK  (item.userId) so each user can see only their items.  The id value at some step was converted from integer to string.  Resolved by changing comparison from '===' to:
 <% if (item.userId == id) {%> 
+
+Issue #48.  Other changes made (moving item index route to usersController, redirect paths, etc.) only sovled issue for viewing the item index from the "See your collection" link on user profile page.  Problem still existed for new and edit functions which all redirected back to the item index page.  This still needs fixed by me, out of time.  Therefore, removed two lines from items/index.ejs (*) forEach
+
+            <% item.forEach((item, user) => { %>
+            <li>
+                <% console.log(`item.userId = ${typeof item.userId}`) %>  
+                <% console.log(`id =  ${typeof id}`) %>   
+                <!-- '==' because item.userId is number &  id is string -->
+  *             <% if (item.userId == id) {%> 
+                    <% console.log(`inside item index IF @ ln 18 ${item.userId}`) %>                
+                <a href="/items/<%= item.id %>">
+                    <%= item.title %> <%= item.issue %> <%= item.publicationCoverDate %> 
+                </a>
+                            <!--  DELETE, removes row from db!!!-->
+            <form action="/items/<%= item.id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete comic"/>
+            </form>
+                        <!-- Edit link here  -->
+            <a href="/items/<%= item.id %>/edit">Edit</a>
+            </li>
+ *          <% } %>
+            <% }) %>
+  So currently, app is still beta but for one user.
+
+
+
+
 
 
 
